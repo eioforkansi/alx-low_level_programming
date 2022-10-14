@@ -1,8 +1,8 @@
 #include <stdio.h>
-/*
- * First use of put function
+/**
+ * main - Entry point
  *
- * Goodluck to me
+ * Return: always 0 (success)
  */
 int main(void)
 {
