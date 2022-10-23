@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-*print_times_tables - start
-*@n: input argument
-*Return: end
-*/
+ *print_times_table - start
+ *@n: input argument
+ *Return: end
+ */
 
 void print_times_table(int n)
 {
