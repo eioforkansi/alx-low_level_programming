@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*print_time_tables - start
+*print_times_tables - start
 *@n: input argument
 *Return: end
 */
