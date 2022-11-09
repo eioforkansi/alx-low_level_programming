@@ -1,13 +1,16 @@
 #include "main.h"
-
 /**
- *_isalpha - function name
- *@c:function parameter
- *Return: 0
+ *_isalpha - start
+ *@c: input parameter
+ *Return: end
  */
 
 int _isalpha(int c)
 {
-	(void)c;
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
 }

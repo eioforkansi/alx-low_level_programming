@@ -1,17 +1,20 @@
 #include "main.h"
 
 /**
- *_memcpy - function name
- *@dest:function parameter
- *@src:function parameter
- *@n:function parameter
- *Return: 0
+ * _memcpy - irontnoux2
+ * @dest: pointer to char params
+ * @src: pointer to char params
+ * @n: size
+ * Return: *dest
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	(void)dest;
-	(void)src;
-	(void)n;
-	return (0);
+unsigned int i;
+
+for (i = 0; i < n; i++)
+{
+dest[i] = src[i];
+}
+return (dest);
 }
