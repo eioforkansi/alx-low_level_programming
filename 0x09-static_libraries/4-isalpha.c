@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *_isaplha - function name
+ *_isalpha - function name
  *@c:function parameter
  *Return: 0
  */

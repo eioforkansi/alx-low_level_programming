@@ -2,9 +2,8 @@
 
 /**
  *_strcat - function name
- *@n:input parameter
- *@b:input parameter
- *@s:input parameter
+ *@dest:input parameter
+ *@src:input parameter
  *Return: 0
  */
 char *_strcat(char *dest, char *src)
