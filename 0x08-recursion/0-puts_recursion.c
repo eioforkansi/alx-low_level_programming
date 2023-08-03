@@ -6,9 +6,9 @@
  */
 void _puts_recursion(char *s)
 {
-	if (*i)
+	if (*s)
 	{
-		_putchar(*i);
+		_putchar(*s);
 		_puts_recursion(s + 1);
 	}
 
