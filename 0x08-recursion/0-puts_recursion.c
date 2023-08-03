@@ -2,9 +2,9 @@
 
 /**
  * _puts_recursion - Prints a string, followed by a new line.
- * @i: The string to be printed.
+ * @s: The string to be printed.
  */
-void _puts_recursion(char *i)
+void _puts_recursion(char *s)
 {
 	if (*i)
 	{
