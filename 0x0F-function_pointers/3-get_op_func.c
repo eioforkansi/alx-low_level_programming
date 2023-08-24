@@ -18,7 +18,9 @@ int (*get_op_func(char *s))(int, int)
 	{ "%", op_mod },
 	{ NULL, NULL }
 	};
+	int i;
 	int m = 0;
+	i = m;
 
 	while (ops[m].op)
 	{
