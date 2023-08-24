@@ -17,8 +17,8 @@ return (-1);
 
 for (m = 0; m < size; m++)
 {
-if (cmp(array[i]) == 1)
-return (i);
+if (cmp(array[m]) == 1)
+return (m);
 }
 return (-1);
 }

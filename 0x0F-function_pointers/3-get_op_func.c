@@ -6,7 +6,7 @@
  * get_op_func - Function that selects the correct function to perform the operation.
  * @s: For the arguement
  *
- * Return: 0
+ * Return: Pointer to function thats choosen
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -22,7 +22,7 @@ int (*get_op_func(char *s))(int, int)
 
 	while (m < 5)
 	{
-		if (strcmp(s, ops[m].op) == 0)
+		if (strcmp(ops[m].op) == 0, s)
 			return (ops[m].f);	
 		m++;
 	}
