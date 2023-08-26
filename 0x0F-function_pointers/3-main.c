@@ -12,22 +12,29 @@
 
 int main(int argc, char *argv[])
 {
-	int (*oprt)(int, int);
+	int num1;
+	int num2;
+	int result;
+	int (*cal)(int, int);
+	char *operator;
 
-	if (argc != 4)
+	if (argc < 4 || argc > 4)
 	{
 		printf("Error\n");
-		exit(98);
+		return 98;
 	}
 
-	oprt = get_op_func(argv[2]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+	operator = argv[2];
+	cal = get_op_func(operator);
+	result = cal(num1, num2);
+	printf("%d\n", result);
 
-	if (!oprt)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 
-	printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
+
+
+
+
 	return (0);
 }
