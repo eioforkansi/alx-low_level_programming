@@ -33,13 +33,13 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (99);
 	}
+	if (num2 == 0)
+	{
+		printf("Error\n");
+		return (100);
+	}
 	result = cal(num1, num2);
 	printf("%d\n", result);
-
-
-
-
-
 
 	return (0);
 }
