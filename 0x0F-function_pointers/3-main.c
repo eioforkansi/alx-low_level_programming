@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (99);
 	}
-	if (num2 == 0)
+	if (((*cal == op_div) || (*cal == op_mod)) && num2 == 0)
 	{
 		printf("Error\n");
 		return (100);
