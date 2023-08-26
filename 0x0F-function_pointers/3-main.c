@@ -28,6 +28,11 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	operator = argv[2];
 	cal = get_op_func(operator);
+	if (cal == NULL)
+	{
+		printf("Error\n");
+		return (99);
+	}
 	result = cal(num1, num2);
 	printf("%d\n", result);
 
