@@ -1,51 +1,53 @@
 #include "main.h"
+#include <stddef.h>
+
 /**
-  *read_textfile - Function that reads a file
-  *@filename: File to be read
-  *@letters: Number of bytes to be printed
-  *
-  *Return: Number of byte written to STDOUT
-  */
+* read_textfile - Function that reads a text file
+*                 and prints it to the std output
+* @filename: name of the file
+* @letters:  no of letters to be printed
+*
+* Return: no of letters read and printed
+*/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t byte_read;
-	char buffer[1024];
-	ssize_t byte_write;
+	int fls, fread, wrt;
+	char *buffer;
 
-	if (filename == NULL)
+	buffer = malloc(sizeof(char) * (letters + 1));
+
+	if (filename == NULL || buffer == NULL)
+	{
+		free(buffer);
+		return (0);
+	}
+
+	fls = open(filename, O_RDONLY);
+
+	if (fls == -1)
 	{
 		return (0);
 	}
 
-	fd = open(filename, O_RDONLY);
+	fread = read(fls, buffer, letters);
 
-	if (fd == -1)
+	if (fread == -1)
 	{
-		perror("Error opening file");
 		return (0);
 	}
 
-	byte_read = read(fd, buffer, letters);
+	buffer[fread] = '\0';
 
-	if (byte_read == -1)
+	wrt = write(STDOUT_FILENO, buffer, fread);
+
+	if (wrt != fread)
 	{
-		perror("Error reading file");
-		close(fd);
 		return (0);
 	}
 
-	buffer[byte_read] = '\0';
+	free(buffer);
 
-	byte_write = write(STDOUT_FILENO, buffer, byte_read);
+	close(fls);
 
-	if (byte_write != byte_read)
-	{
-		perror("Error writing to the standard output");
-		close(fd);
-		return (0);
-	}
-
-	close(fd);
-	return (byte_read);
+	return (fread);
 }
